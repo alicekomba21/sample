@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Frm</title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            nav{
+                display: flex;
+                background-color: grey;
+                padding: 10px;
+                width: 100%;
+                justify-content: space-around;
+            }
+            a{
+                color: white;
+            }
+            form{
+                display: flex;
+                width: 50%;
+                flex-direction: column;
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                var p = document.querySelectorAll('p');
+                p.forEach(function(item){
+                    item.innerHTML="this in not a paragraphy";
+            });
+            var form = document.querySelector('#form_id');
+
+            form.onsubmit=function(){
+                var name = document.querySelector('#name');
+                var pwd = document.querySelector('#pwd');
+                document.querySelector('h1').innerHTML=`THE SUM OF ${name.value} AND ${pwd.value} IS ${parseInt(name.value)+parseInt(pwd.value)}`;
+                return false;
+            }
+            });
+            
+        </script>
+    </head>
+    <body>
+        <nav>
+            <div>
+                <a href="">link</a>
+            </div>
+            <div>
+                <a href="">link</a>
+            </div>
+            <div>
+                <a href="">link</a>
+            </div>
+            <div>
+                <a href="">link</a>
+            </div>
+            <div>
+                <a href="">link</a>
+            </div>
+        </nav>
+        <p>This is a paragraph</p>
+        <p>This is a paragraph</p>
+        <form id="form_id">
+            <span>No.1</span>
+            <input type="number" id="name" placeholder="enter number 1"/>
+            <span>No.2</span>
+            <input type="number" id="pwd" placeholder="enter number 2"/>
+            <input type="submit" value="submit" />
+        </form>
+        <h1></h1>
+    </body>
+</html>
